@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 8000;
 
 // middleware
 app.use(cors());
+app.get("/", (req,res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running");
+})
 app.use(morgan('tiny'));
 app.use(express.json());
 app.use(cookieParser());
